@@ -1,20 +1,21 @@
 %% 常量定义
-global B A CR_Access_MAX CR_Edge_MAX B_Fronthaul_MAX
+global B A LMIMO CR_Access_MAX CR_Edge_MAX B_Fronthaul_MAX
 B = 20; %系统带宽
 A = 1; %天线模式
+LMIMO = 1; %层映射数
 CR_Access_MAX = 1060; %接入站点的总计算能力
 CR_Edge_MAX = 1060; %边缘站点的总计算能力
 B_Fronthaul_MAX = 1288.8; %前传链路容量
+M = 1; C = 1; Ld = 1;
 %% 参考常量定义
 global A_ref B_ref M_ref C_ref LMIMO_ref Ld_ref
 A_ref = 2; B_ref = 10; M_ref = 6; C_ref = 5/6; LMIMO_ref = 2; Ld_ref = 1;
 
 %% 计算资源模型常量定义
-global SIGMA1 SIGMA2 SIGMA3
-global G1_ref G2_ref G3_ref G4_ref G5_ref G6_ref
-SIGMA1 = 0.2; SIGMA2 = 0.3; SIGMA3 = 0.5;
-G1_ref = 200; G2_ref = 20; G3_ref = 10; G4_ref = 30; G5_ref = 80; G6_ref = 720;
-
+global SIGMA
+global G_ref
+SIGMA = [0.2 0.3 0.5];
+G_ref = [200 20 10 30 80 720];
 %% 带宽资源模型常量定义
 global n_RB fs
 n_RB = 100; fs = 30.72;
@@ -38,3 +39,17 @@ beta_2 = Coef(11);
 global PUE_Access PUE_Edge
 PUE_Access = 2.3;
 PUE_Edge = 1.5;
+
+%% 分离时延
+t_Split = [30 30 6 2 0.25 0.25 0.25 0.25 0.25];
+
+%% 用户需求时延
+t_eMBB = [1 2 3 4];
+t_uRLLC = [0.1 0.2 0.3 0.4];
+
+%% 用户需求流量
+Ld_eMBB_Min = 10; Ld_eMBB_Max = 100;
+Ld_uRLLC_Min = 1; Ld_uRLLC_Max = 10;
+
+%% MCS Index
+load('MCS_Table')
