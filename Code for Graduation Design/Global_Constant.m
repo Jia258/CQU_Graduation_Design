@@ -6,6 +6,9 @@ LMIMO = 2; %层映射数
 CR_Access_MAX = 1060; %接入站点的总计算能力
 CR_Edge_MAX = 1060; %边缘站点的总计算能力
 B_Fronthaul_MAX = 1288.8; %前传链路容量
+N = 100; %UE数量
+eMBB_ration = 0.8;
+uRLLC_ration = 1 - eMBB_ration;
 
 %% 参考常量定义
 A_ref = 2; B_ref = 10; M_ref = 6; C_ref = 5/6; LMIMO_ref = 2; Ld_ref = 1;
