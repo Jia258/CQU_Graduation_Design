@@ -1,26 +1,21 @@
-%% 常量定义
-global B A LMIMO CR_Access_MAX CR_Edge_MAX B_Fronthaul_MAX
+% 常量
+%% 系统常量
 B = 20; %系统带宽
-A = 1; %天线模式
-LMIMO = 1; %层映射数
+A = 2; %天线模式
+LMIMO = 2; %层映射数
 CR_Access_MAX = 1060; %接入站点的总计算能力
 CR_Edge_MAX = 1060; %边缘站点的总计算能力
 B_Fronthaul_MAX = 1288.8; %前传链路容量
-M = 1; C = 1; Ld = 1;
+
 %% 参考常量定义
-global A_ref B_ref M_ref C_ref LMIMO_ref Ld_ref
 A_ref = 2; B_ref = 10; M_ref = 6; C_ref = 5/6; LMIMO_ref = 2; Ld_ref = 1;
 
 %% 计算资源模型常量定义
-global SIGMA
-global G_ref
-SIGMA = [0.2 0.3 0.5];
+Sigma = [0.2 0.3 0.5];
 G_ref = [200 20 10 30 80 720];
+
 %% 带宽资源模型常量定义
-global n_RB fs
 n_RB = 100; fs = 30.72;
-global alpha_0 alpha_1 alpha_2 alpha_3 alpha_4 alpha_5 alpha_6 alpha_7 alpha_8
-global beta_1 beta_2
 % 系数计算
 [Coef] = Coefficient_Calculation();
 alpha_0 = Coef(1);
@@ -36,7 +31,6 @@ beta_1 = Coef(10);
 beta_2 = Coef(11);
 
 %% 功率消耗模型常量定义
-global PUE_Access PUE_Edge
 PUE_Access = 2.3;
 PUE_Edge = 1.5;
 

@@ -4,7 +4,7 @@ function [Coef] = Coefficient_Calculation()
     IP_DL_TTI = 6.2439; N_DL_TBS = 2; FAPI_DL = 1.5;
     N_SYM_SUB = 14; N_SC_RB = 12; N_UE = 1;
     Qm_PDSCH = 6; Qm_PCFICH = 2; Qm_PDCCH = 2;
-    Layers_DL = 2; PDSCH_REs = 15000; PCFICH_REs = 16;
+    Layers_DL = 2; PDSCH_REs = 14400; PCFICH_REs = 16;
     PHICH_REs = 12; PDCCH_REs = 144;
     N_IQ = 32; N_CPRI = 32;
     %% 系数计算
