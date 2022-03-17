@@ -13,3 +13,5 @@ Computation_Resource_Model
 Bandwidth_Resource_Model
 
 %% 优化求解
+% 常量定义
+alpha = 0.3; beta = 0.3; gamma = 0.4;

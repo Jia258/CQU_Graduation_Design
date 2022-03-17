@@ -22,8 +22,9 @@ for i = 1:N
 end
 
 %打乱数据
-% L = L(randperm(N));
-% t_UE = t_UE(randperm(N));
+shuffle=randperm(N);
+L = L(shuffle);
+t_UE = t_UE(shuffle);
 
 %生成流量负载
 for i = 1:N
