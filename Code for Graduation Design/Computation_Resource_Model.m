@@ -26,7 +26,7 @@ for i = 1:length(PF)
 
 end
 
-CR_Table = CR_Table';
+CR_Table = CR_Table'; %转置
 % 累加求和
 E_Temp = cumsum(CR_Table, 2);
 A_Temp = cumsum(CR_Table, 2, 'reverse');

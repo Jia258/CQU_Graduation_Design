@@ -25,4 +25,4 @@ for i = 1:length(BR)
 
 end
 
-R_n_k = R_n_k';
+R_n_k = R_n_k'; %转置
