@@ -3,15 +3,17 @@
 B = 20; %系统带宽
 A = 2; %天线模式
 LMIMO = 2; %层映射数
-CR_Access_MAX = 1060; %接入站点的总计算能力
-CR_Edge_MAX = 1060; %边缘站点的总计算能力
-B_Fronthaul_MAX = 1288.8; %前传链路容量
+CR_Access_MAX = 3 * 28800; %接入站点的总计算能力
+CR_Edge_MAX = 28800; %边缘站点的总计算能力
+B_Fronthaul_MAX = 3686.7; %前传链路容量
 N = 100; %UE数量
-eMBB_ration = 0.8;
-uRLLC_ration = 1 - eMBB_ration;
+K = 9; %分离选项数量
+eMBB_ration = 0.5; %eMBB用户业务权重
+%uRLLC_ration = 1 - eMBB_ration;
+alpha = 0.3; beta = 0.3; gamma = 0.4; %目标函数权重
 
 %% 参考常量定义
-A_ref = 2; B_ref = 10; M_ref = 6; C_ref = 5/6; LMIMO_ref = 2; Ld_ref = 1;
+A_ref = 2; B_ref = 20; M_ref = 6; C_ref = 5/6; LMIMO_ref = 2; Ld_ref = 1;
 
 %% 计算资源模型常量定义
 Sigma = [0.2 0.3 0.5];
@@ -39,10 +41,15 @@ PUE_Edge = 1.5;
 
 %% 分离时延
 t_Split = [30 30 6 2 0.25 0.25 0.25 0.25 0.25];
+t_Split_Matrix = [];
+
+for t = 1:N
+    t_Split_Matrix = [t_Split_Matrix; t_Split];
+end
 
 %% 用户需求时延
-t_eMBB = [1 2 3 4];
-t_uRLLC = [0.1 0.2 0.3 0.4];
+t_eMBB = [2 4 6 8];
+t_uRLLC = [0.25 0.5 0.75 1];
 
 %% 用户需求流量
 Ld_eMBB_Min = 10; Ld_eMBB_Max = 100;

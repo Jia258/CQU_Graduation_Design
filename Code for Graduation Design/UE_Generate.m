@@ -1,9 +1,10 @@
 % 用户数据生成
+rng(0,'philox')
 %% MCS
 I_MCS = randi([1, 29], 1, N);
 M = MCS_Table(1, I_MCS);
 C = MCS_Table(2, I_MCS);
-
+%SNR_CQI
 %% 流量和时延生成
 L = zeros(1, N); %预分配内存
 Ld = zeros(1, N); %预分配内存
@@ -16,7 +17,7 @@ for i = 1:N
         t_UE(i) = t_eMBB(randi([1, 4]));
     else
         L(i) = randi([Ld_uRLLC_Min, Ld_uRLLC_Max]);
-        t_UE(i) = t_eMBB(randi([1, 4]));
+        t_UE(i) = t_uRLLC(randi([1, 4]));
     end
 
 end
