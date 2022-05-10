@@ -37,7 +37,7 @@ Cons = Cons1 + Cons2 + Cons3 + Cons4 + Cons5;
 ops = sdpsettings('solver', 'lpsolve', 'verbose', 2);
 % 求解
 result = solvesdp(Cons, F, ops);
-T=result.yalmiptime+result.solvertime
+%T=result.yalmiptime+result.solvertime
 if result.problem == 0
     Optimal_X = value(X);
     Optimal_F = value(F);

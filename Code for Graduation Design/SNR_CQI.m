@@ -11,9 +11,9 @@ gNB_x = 0; gNB_y = 0; %基站位置
 for i=1:N
     flag=1;
     while flag
-        x(i)=-5 + (5 - (-5)) * rand;
-        y(i)=-5 + (5 - (-5)) * rand;
-        if sqrt(x(i).^2 + y(i).^2)<5
+        x(i)=-0.5 + (0.5 - (-0.5)) * rand;
+        y(i)=-0.5 + (0.5 - (-0.5)) * rand;
+        if sqrt(x(i).^2 + y(i).^2)<0.5
             UE_x(i)= x(i);
             UE_y(i)= y(i);
             flag=0;
@@ -27,8 +27,8 @@ xlabel('\it x\rm(km)','FontSize',12.5);
 ylabel('\it y\rm(km)','FontSize',12.5);
 legend({'gNB','UE'},'location','northeast','FontName','times','FontSize',10.5);%legend('boxoff');
 axis equal
-set(gca,'XLim',[-5 5]);
-set(gca,'YLim',[-5 5]);
+set(gca,'XLim',[-0.5 0.5]);
+set(gca,'YLim',[-0.5 0.5]);
 grid on;box on;
 set(gca,'gridlinestyle',':','FontName', 'Times');
 ax=gca;

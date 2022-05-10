@@ -2,7 +2,7 @@ function [Optimal_X, Optimal_F] = Split_COASAHPSO()
     N = evalin('base', 'N');
     %% 种群参数
     popsize = 40; %种群大小 40可以找到和求解器一样的解
-    iter_max = 25; %迭代次数
+    iter_max = 20; %迭代次数
     lamda = 0.9; %降温速度
     %% 初始化
     % 初始化粒子位置和速度

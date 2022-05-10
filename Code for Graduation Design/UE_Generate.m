@@ -1,10 +1,10 @@
 % 用户数据生成
 rng(0,'philox')
 %% MCS
-I_MCS = randi([1, 29], 1, N);
-M = MCS_Table(1, I_MCS);
-C = MCS_Table(2, I_MCS);
-%SNR_CQI
+% I_MCS = randi([1, 29], 1, N);
+% M = MCS_Table(1, I_MCS);
+% C = MCS_Table(2, I_MCS);
+SNR_CQI
 %% 流量和时延生成
 L = zeros(1, N); %预分配内存
 Ld = zeros(1, N); %预分配内存

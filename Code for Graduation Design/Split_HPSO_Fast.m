@@ -1,7 +1,7 @@
 function [Optimal_X, Optimal_F,t_all] = Split_HPSO_Fast()
     N = evalin('base', 'N');
     %% 种群参数
-    popsize = 20; %种群大小
+    popsize = 40; %种群大小
     iter_max = 20; %迭代次数
     %% 初始化
     X = zeros(N, popsize);

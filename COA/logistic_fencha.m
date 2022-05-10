@@ -2,7 +2,7 @@ clc;clear all;close all
 axis([0,4,0,1]);
 x0=0.1;%迭代初始值
 M=1000;%迭代次数
-mu=0:0.005:4;%参数
+mu=0:0.01:4;%参数
 [m,n]=size(mu);
 x=zeros(1,1000);
 xn=zeros(1,200);
